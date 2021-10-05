@@ -7,20 +7,26 @@ public class PetShop {
 
 
 
-        ArrayList<Pets>pets = new ArrayList<>();
+
 
 
 
         Scanner fetch = new Scanner(System.in);
         System.out.println("How many pets do you have? ");
 
-
         int petNum = fetch.nextInt();
+
+        Pets[] petArray = new Pets[petNum];
+
+
         for(int i = 0; i < petNum; i++){
             //Asking for petType
             Scanner sd = new Scanner(System.in);
             System.out.println("What kind of pet do you have? ");
             String petType = sd.next();
+
+
+
             //Asking for petName
             Scanner getName = new Scanner(System.in);
             System.out.println("What is your pets name");
@@ -31,17 +37,17 @@ public class PetShop {
             switch (petType.toLowerCase()){
                 case "dog" :
                     Dog dog1 = new Dog(petName, petType);
-                    pets.add(dog1);
+                    petArray[0] = dog1;
                     dog1.Speak();
                     break;
                 case "cat" :
                     Cat cat1 = new Cat(petName, petType);
-                    pets.add(cat1);
+                    petArray[1] = cat1;
                     cat1.Speak();
                     break;
                 case "bird" :
                     Bird bird1 = new Bird(petName, petType);
-                    pets.add(bird1);
+                    petArray[3] = bird1;
                     bird1.Speak();
                     break;
                 default:
@@ -51,7 +57,7 @@ public class PetShop {
             }
 
 
-            System.out.println(pets);
+            System.out.println(Arrays.toString(petArray));
 
 
 
